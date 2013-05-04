@@ -1,0 +1,42 @@
+
+Tasks for iOS
+=============
+
+Welcome to the most badly written to-do app ever! For this project we created a
+very simple to-do app and filled it with as many bugs as possible. Your job is
+to tidy up the code and make the app work properly. It’s an opportunity for you
+to show off your coding skills in the best light possible. We had lots of fun
+building (breaking) this project and we hope you have just as much fun fixing
+it :)
+
+Problems in the app range from small bugs and untidy code style to major
+architectural issues. Feel free to totally rip the code apart or even write the
+whole app again from scratch. If you work with the existing code, we recommend
+you start with the Task class, then move on to the TaskCell and
+TasksTableViewController.
+
+Don’t worry about finding the perfect or ‘correct’ solution; there are many
+different ways to fix this app. In fact, within Cultured Code we’ve already had
+a few controversial discussions over different parts in the code.
+
+This should be a fun exercise, so we want to avoid too much work on your part.
+The following changes and improvements are not necessary as far as we’re
+concerned:
+
+- Adding new features to the app.
+- Adding a proper model and data persistence layer.
+- Adding or using XIB files. We only sparingly use them at Cultured Code anyway.
+- Writing unit tests.
+- Adding headerdoc style class documentation to header files.
+- Setting up the project to use xcconfig configuration files.
+- Setting up gcov or another test coverage calculation tools.
+- Creating or editing graphics in photoshop.
+- Adding a mechanism to edit the default task data. The app is obviously not
+  suitable for real world use in this state, but that is not the goal.
+
+Feel free to write in (developers@culturedcode.com) if you are unsure of
+anything.
+
+Otherwise, have fun!
+
+— The Cultured Code Dev Team
