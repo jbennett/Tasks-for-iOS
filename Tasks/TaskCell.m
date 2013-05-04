@@ -31,6 +31,11 @@
     self.textLabel.text = task.title;
 }
 
+- (void)setActive
+{
+    self.textLabel.textColor = [UIColor blackColor];
+    [self checkboxImageView].image = [UIImage uncheckedImage];
+}
 
 - (void)setInactive
 {

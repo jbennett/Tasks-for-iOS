@@ -14,6 +14,7 @@
 @property (nonatomic, retain) Task *task;
 
 - (void)configureStyle;
+- (void)setActive;
 - (void)setInactive;
 
 @end
