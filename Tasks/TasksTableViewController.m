@@ -102,12 +102,12 @@
 
 - (void)completeAll
 {
-    for (UITableViewCell *cell in self.tableView.visibleCells) {
-        if (![[(TaskCell *)cell task] completed]) {
-            [(TaskCell *)cell setInactive];
-            [[(TaskCell *)cell task] switchDone];
-        }
-    }
+    [self.tasks enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        Task *task = (Task *)obj;
+        [task setCompleted:YES];
+    }];
+    
+    [self.tableView reloadData];
 }
 
 - (void)sort
