@@ -74,7 +74,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     id cell = [tableView cellForRowAtIndexPath:indexPath];
-    [[cell task] switchDone];
+    [[cell task] toggleCompleted];
 
     if ([[cell task] isCompleted]) {
         [cell setInactive];

@@ -29,7 +29,6 @@
 // Completed
 - (BOOL)notCompleted;
 - (void)toggleCompleted;
-- (void)switchDone __attribute__((deprecated));
 
 @end
 

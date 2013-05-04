@@ -72,11 +72,6 @@
     self.completed = !self.completed;
 }
 
-- (void)switchDone
-{
-    [self toggleCompleted];
-}
-
 - (BOOL)notCompleted
 {
     return !self.completed;
@@ -85,9 +80,7 @@
 - (void) makeAllChildrenComplete;
 {
     for (int l=0;l!=self.childrenTasks.count;l=l++) {
-        if ([[self.childrenTasks objectAtIndex:l] notCompleted]) {
-            [[self.childrenTasks objectAtIndex:l] switchDone];
-        }
+        [[self.childrenTasks objectAtIndex:l] setCompleted:YES];
     }
 }
 

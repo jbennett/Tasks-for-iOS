@@ -89,7 +89,7 @@ NSString *kChildren = @"children";
 
         Task *task = [[Task alloc] initWithTitle:title];
         task.childrenTasks = [NSMutableArray array];
-        if (completed != task.completed) [task switchDone];
+        [task setCompleted:completed];
 
         if (childrenDescriptions != nil && childrenDescriptions.count > 0) {
             NSArray *children = [self _tasksFromDescriptions:childrenDescriptions];
