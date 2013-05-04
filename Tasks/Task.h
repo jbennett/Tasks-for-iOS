@@ -33,6 +33,7 @@
 // Completed
 -(BOOL)completed;
 - (BOOL)notCompleted;
+- (void)setCompleted:(BOOL)completed;
 - (void)switchDone;
 
 - (void)makeAllChildrenComplete;

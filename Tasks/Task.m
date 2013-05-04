@@ -84,6 +84,10 @@
     [childrenTasks removeObject:child];
 }
 
+- (void)setCompleted:(BOOL)completed
+{
+    done = completed;
+}
 
 - (void)switchDone
 {
@@ -93,6 +97,7 @@
 -(BOOL)completed {
     return done;
 }
+
 - (BOOL)notCompleted;
 {
     return !done;
