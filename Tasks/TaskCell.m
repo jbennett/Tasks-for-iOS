@@ -11,13 +11,6 @@
 
 @implementation TaskCell
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-
-    return self;
-}
-
 - (void)configureStyle
 {
     self.textLabel.font = [UIFont fontWithName:@"AmericanTypewriter" size:16];
@@ -51,7 +44,7 @@
     [super layoutSubviews];
 
     // Configure Image View
-    UIImageView *imageView = (UIImageView *)[self subviewForTag:CHECKMARKVIEW];
+    UIImageView *imageView = (UIImageView *)[self viewWithTag:CHECKMARKVIEW];
     if (imageView == nil) {
         imageView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Checkbox-Empty.png"]] autorelease];
         imageView.tag = CHECKMARKVIEW;

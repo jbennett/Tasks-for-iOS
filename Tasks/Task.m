@@ -16,26 +16,25 @@
 
 - (Task*)init
 {
-    [super init];
-
-    title = @"<no title>";
-    modified = 0;
-    return self;
+    return [self initWithTitle:@"<no title>"];
 }
 
 - (Task *)initWithTitle:(NSString*)name
 {
-    [super init];
-    title = name;
+    if (self = [super init]) {
+        title = name;
+        modified = 0;
+    }
     
     return self;
 }
 
 -(void)dealloc
 {
-    [super dealloc];
     title = nil;
     [childrenTasks removeAllObjects];
+    
+    [super dealloc];
 }
 
 - (void)setTitle: (NSString *) t
@@ -61,9 +60,9 @@
     NSCalendar* cal = [[NSCalendar alloc] init];
     NSString* ret;
     if(modified) {
-        NSDateFormatter *f = [[NSDateFormatter alloc] init];
-        [f setCalendar:cal];
-        ret = [[f stringFromDate:modified] retain];
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setCalendar:cal];
+        ret = [[formatter stringFromDate:modified] retain];
         [cal release];
     } else {
         return @"not yet modified";
@@ -88,30 +87,15 @@
 
 - (void)switchDone
 {
-    BOOL newDone = NO;
-    if (done) {
-        done = newDone;
-    } else {
-        newDone = YES;
-    }
-
-    done = newDone;
+    done = !done;
 }
 
 -(BOOL)completed {
-    if (done) {
-        return YES;
-    } else {
-        return NO;
-    }
+    return done;
 }
 - (BOOL)notCompleted;
 {
-    if (!done) {
-        return NO;
-    } else {
-        return YES;
-    }
+    return !done;
 }
 
 - (void) makeAllChildrenComplete;
