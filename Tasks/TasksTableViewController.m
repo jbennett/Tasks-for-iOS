@@ -10,7 +10,7 @@
 #import "TaskCell.h"
 
 @interface TasksTableViewController ()
-@property (nonatomic, retain) NSArray *tasks;
+@property (nonatomic, retain) NSMutableArray *tasks;
 @property (nonatomic, retain) NSIndexPath *lastSelectedPath;
 @end
 
@@ -21,7 +21,7 @@
     self = [super initWithStyle:UITableViewStylePlain];
     if (self != nil) {
         self.title = @"Tasks";
-        self.tasks = tasks;
+        self.tasks = [tasks mutableCopy];
         self.toolbarItems = @[
                               [[[UIBarButtonItem alloc] initWithTitle:@"complete all"
                                                                 style:UIBarButtonItemStyleBordered
@@ -33,6 +33,8 @@
                                                                target:self
                                                                action:@selector(sort)] autorelease]
                               ];
+        
+        self.navigationItem.rightBarButtonItem = self.editButtonItem;
 
         [self.tableView registerClass:[TaskCell class]
                forCellReuseIdentifier:@"TaskCell"];
@@ -100,6 +102,20 @@
     [self.navigationController pushViewController:tvc animated:YES];
 }
 
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    switch (editingStyle) {
+        case UITableViewCellEditingStyleDelete:
+            [self.tasks removeObjectAtIndex:indexPath.row];
+            [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationRight];
+            break;
+            
+        default:
+            break;
+    }
+}
+
+#pragma mark - Actions
 - (void)completeAll
 {
     [self.tasks enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
