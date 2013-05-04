@@ -104,7 +104,9 @@
 {
     [self.tasks enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         Task *task = (Task *)obj;
-        [task setCompleted:YES];
+        if (![task.childrenTasks count]) {
+            [task setCompleted:YES];
+        }
     }];
     
     [self.tableView reloadData];
