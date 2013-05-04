@@ -11,6 +11,7 @@
 
 @interface TasksTableViewController ()
 @property (nonatomic, retain) NSArray *tasks;
+@property (nonatomic, retain) NSIndexPath *lastSelectedPath;
 @end
 
 @implementation TasksTableViewController
@@ -37,6 +38,16 @@
                forCellReuseIdentifier:@"TaskCell"];
     }
     return self;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    if (self.lastSelectedPath) {
+        [self.tableView reloadRowsAtIndexPaths:@[self.lastSelectedPath] withRowAnimation:UITableViewRowAnimationNone];
+        self.lastSelectedPath = nil;
+    }
 }
 
 - (void)dealloc
@@ -81,6 +92,7 @@
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 {
     id cell = [tableView cellForRowAtIndexPath:indexPath];
+    self.lastSelectedPath = indexPath;
 
     TasksTableViewController *tvc = [[[TasksTableViewController alloc] initWithTasks:[[cell task] childrenTasks]] autorelease];
     tvc.title = [[cell task] title];
