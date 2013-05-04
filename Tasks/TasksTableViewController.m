@@ -111,11 +111,19 @@
 
 - (void)sort
 {
+    
     NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES];
+    NSArray *oldTasks = [self.tasks copy];
     self.tasks = [self.tasks sortedArrayUsingDescriptors:@[sort]];
-
-    // This would look much nicer with animations, wouldn't it? :)
-    [self.tableView reloadData];
+    
+    // animate change
+    [self.tableView beginUpdates];
+    [oldTasks enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        int newIndex = [self.tasks indexOfObject:obj];
+        [self.tableView moveRowAtIndexPath:[NSIndexPath indexPathForItem:idx inSection:0]
+                               toIndexPath:[NSIndexPath indexPathForItem:newIndex inSection:0]];
+    }];
+    [self.tableView endUpdates];
 }
 
 @end
