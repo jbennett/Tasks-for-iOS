@@ -28,18 +28,17 @@
 - (void)setTask:(Task *)task
 {
     _task = task;
-
     self.textLabel.text = task.title;
 }
 
 
-- (void)setInactive; {
+- (void)setInactive
+{
     self.textLabel.textColor = [UIColor lightGrayColor];
 }
 
-
-
-- (UIView *)subviewForTag:(NSInteger)tag {
+- (UIView *)subviewForTag:(NSInteger)tag
+{
     for (UIView *subview in self.subviews) {
         if (subview.tag == tag) return subview;
     }

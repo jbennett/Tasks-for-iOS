@@ -11,6 +11,7 @@
     NSDate *modified;
     BOOL *done;
 }
+
 - (Task*)init;
 - (Task*)initWithTitle:(NSString*)name;
 
