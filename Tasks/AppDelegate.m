@@ -100,7 +100,7 @@ NSString *kChildren = @"children";
             NSArray *children = [self _tasksFromDescriptions:childrenDescriptions];
             for (Task *child in children) {
                 [task addChild:child];
-                NSLog(@"adding");
+                // NSLog(@"adding"); // don't need to log
             }
         }
 

@@ -83,7 +83,7 @@
     if ([[cell task] completed]) {
         [cell setInactive];
     } else {
-        [[cell textLabel] setTextColor:[UIColor blackColor]];
+        [cell setActive];
     }
 
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
