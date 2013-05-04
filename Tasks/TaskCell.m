@@ -6,6 +6,7 @@
 //
 
 #import "TaskCell.h"
+#import "UIImage+NamedImages.h"
 
 #define CHECKMARKVIEW 100
 
@@ -46,7 +47,7 @@
     // Configure Image View
     UIImageView *imageView = (UIImageView *)[self viewWithTag:CHECKMARKVIEW];
     if (imageView == nil) {
-        imageView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Checkbox-Empty.png"]] autorelease];
+        imageView = [[[UIImageView alloc] initWithImage:[UIImage checkedImage]] autorelease];
         imageView.tag = CHECKMARKVIEW;
     }
 
@@ -60,9 +61,9 @@
 
     // Switch Image
     if (_task.completed) {
-        imageView.image = [UIImage imageNamed:@"Checkbox-Checked.png"];
+        imageView.image = [UIImage checkedImage];
     } else {
-        imageView.image = [UIImage imageNamed:@"Checkbox-Empty.png"];
+        imageView.image = [UIImage uncheckedImage];
     }
 }
 
