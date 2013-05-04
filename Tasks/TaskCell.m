@@ -78,6 +78,13 @@
 
     imageView.bounds = CGRectMake(0, 0, 40, self.bounds.size.height);
     [self addSubview:imageView];
+    
+    // hide checkbox if editing
+    if ([self isEditing]) {
+        [imageView setHidden:YES];
+    } else {
+        [imageView setHidden:NO];
+    }
 
     // Configure Title
     CGRect r = self.textLabel.bounds;
