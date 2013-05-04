@@ -79,16 +79,14 @@
 
 - (void) makeAllChildrenComplete;
 {
-    for (int l=0;l!=self.childrenTasks.count;l=l++) {
-        [[self.childrenTasks objectAtIndex:l] setCompleted:YES];
-    }
+    [self.childrenTasks enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        [obj setCompleted:YES]; 
+    }];
 }
 
 - (void)deleteChildren;
 {
-    for(int l=0;l<=self.childrenTasks.count;l=l++) {
-        [self.childrenTasks removeObjectAtIndex:l];
-    }
+    [self.childrenTasks removeAllObjects];
 }
 
 @end
