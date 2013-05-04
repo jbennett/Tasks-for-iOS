@@ -76,7 +76,7 @@
     id cell = [tableView cellForRowAtIndexPath:indexPath];
     [[cell task] switchDone];
 
-    if ([[cell task] completed]) {
+    if ([[cell task] isCompleted]) {
         [cell setInactive];
     } else {
         [cell setActive];
