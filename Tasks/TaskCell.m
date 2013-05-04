@@ -29,6 +29,18 @@
 {
     _task = task;
     self.textLabel.text = task.title;
+    
+    if ([_task.childrenTasks count] > 0) {
+        [self setAccessoryType:UITableViewCellAccessoryDetailDisclosureButton];
+    } else {
+        [self setAccessoryType:UITableViewCellAccessoryNone];
+    }
+    
+    if (_task.completed) {
+        [self setInactive];
+    } else {
+        [self setActive];
+    }
 }
 
 - (void)setActive

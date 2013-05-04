@@ -59,17 +59,6 @@
     [cell configureStyle];
     [cell setTask:[self.tasks objectAtIndex:[indexPath row]]];
 
-    Task *task = [self.tasks objectAtIndex:[indexPath row]];
-    if ([task.childrenTasks count] > 0) {
-        [cell setAccessoryType:UITableViewCellAccessoryDetailDisclosureButton];
-    } else {
-        [cell setAccessoryType:UITableViewCellAccessoryNone];
-    }
-
-    if (task.completed) {
-        [cell setInactive];
-    }
-
     return cell;
 }
 
