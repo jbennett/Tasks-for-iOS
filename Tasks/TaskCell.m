@@ -72,7 +72,7 @@
     // Configure Image View
     UIImageView *imageView = [self checkboxImageView];
     if (imageView == nil) {
-        imageView = [[[UIImageView alloc] initWithImage:[UIImage checkedImage]] autorelease];
+        imageView = [[UIImageView alloc] initWithImage:[UIImage checkedImage]];
         imageView.tag = CHECKMARKVIEW;
     }
 

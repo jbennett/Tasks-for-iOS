@@ -28,7 +28,7 @@
 
 /* Begin PBXFileReference section */
 		363577F4172FB65A00A17CFC /* Welcome.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Welcome.txt; sourceTree = "<group>"; };
-		36CF558A16DD7EAE0028A8D1 /* Tasks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tasks.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		36CF558A16DD7EAE0028A8D1 /* MyTasks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTasks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36CF558E16DD7EAE0028A8D1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		36CF559016DD7EAE0028A8D1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		36CF559216DD7EAE0028A8D1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -83,7 +83,7 @@
 		36CF558B16DD7EAE0028A8D1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				36CF558A16DD7EAE0028A8D1 /* Tasks.app */,
+				36CF558A16DD7EAE0028A8D1 /* MyTasks.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -156,7 +156,7 @@
 			);
 			name = MyTasks;
 			productName = Tasks;
-			productReference = 36CF558A16DD7EAE0028A8D1 /* Tasks.app */;
+			productReference = 36CF558A16DD7EAE0028A8D1 /* MyTasks.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -273,6 +273,7 @@
 		36CF55A916DD7EAE0028A8D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tasks/Tasks-Prefix.pch";
 				INFOPLIST_FILE = "Tasks/Tasks-Info.plist";
@@ -284,6 +285,7 @@
 		36CF55AA16DD7EAE0028A8D1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tasks/Tasks-Prefix.pch";
 				INFOPLIST_FILE = "Tasks/Tasks-Info.plist";

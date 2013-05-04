@@ -31,17 +31,14 @@
 
 -(void)dealloc
 {
-    title = nil;
     [childrenTasks removeAllObjects];
     
-    [super dealloc];
 }
 
 - (void)setTitle: (NSString *) t
 {
     modified = NOW;
-    [title release];
-    self.title = [t retain];
+    self.title = t;
 }
 
 
@@ -62,13 +59,12 @@
     if(modified) {
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
         [formatter setCalendar:cal];
-        ret = [[formatter stringFromDate:modified] retain];
-        [cal release];
+        ret = [formatter stringFromDate:modified];
     } else {
         return @"not yet modified";
     }
 
-    return [ret autorelease];
+    return ret;
 }
 
 

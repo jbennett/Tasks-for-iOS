@@ -10,8 +10,8 @@
 #import "TaskCell.h"
 
 @interface TasksTableViewController ()
-@property (nonatomic, retain) NSMutableArray *tasks;
-@property (nonatomic, retain) NSIndexPath *lastSelectedPath;
+@property (nonatomic, strong) NSMutableArray *tasks;
+@property (nonatomic, strong) NSIndexPath *lastSelectedPath;
 @end
 
 @implementation TasksTableViewController
@@ -23,15 +23,15 @@
         self.title = @"Tasks";
         self.tasks = [tasks mutableCopy];
         self.toolbarItems = @[
-                              [[[UIBarButtonItem alloc] initWithTitle:@"complete all"
+                              [[UIBarButtonItem alloc] initWithTitle:@"complete all"
                                                                 style:UIBarButtonItemStyleBordered
                                                                target:self
-                                                               action:@selector(completeAll)] autorelease],
+                                                               action:@selector(completeAll)],
 
-                              [[[UIBarButtonItem alloc] initWithTitle:@"sort by name"
+                              [[UIBarButtonItem alloc] initWithTitle:@"sort by name"
                                                                 style:UIBarButtonItemStyleBordered
                                                                target:self
-                                                               action:@selector(sort)] autorelease]
+                                                               action:@selector(sort)]
                               ];
         
         self.navigationItem.rightBarButtonItem = self.editButtonItem;
@@ -52,12 +52,6 @@
     }
 }
 
-- (void)dealloc
-{
-    self.tasks = nil;
-    
-    [super dealloc];
-}
 
 #pragma mark - Table view data source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -96,7 +90,7 @@
     id cell = [tableView cellForRowAtIndexPath:indexPath];
     self.lastSelectedPath = indexPath;
 
-    TasksTableViewController *tvc = [[[TasksTableViewController alloc] initWithTasks:[[cell task] childrenTasks]] autorelease];
+    TasksTableViewController *tvc = [[TasksTableViewController alloc] initWithTasks:[[cell task] childrenTasks]];
     tvc.title = [[cell task] title];
 
     [self.navigationController pushViewController:tvc animated:YES];

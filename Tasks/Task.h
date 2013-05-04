@@ -17,7 +17,7 @@
 
 - (void)setModified: (NSDate *)date;
 
-@property(nonatomic,retain) NSString* title;
+@property(nonatomic,strong) NSString* title;
 
 -(void) setTitle:(NSString *)title;
 
@@ -25,8 +25,8 @@
 -(NSString *)modifiedString;
 
 // Children
-@property (retain) NSMutableArray* childrenTasks;
-@property (retain) id parentTask;
+@property (strong) NSMutableArray* childrenTasks;
+@property (strong) id parentTask;
 - (void)addChild:(Task*)child;
 - (void)removeChild:(Task*)child;
 

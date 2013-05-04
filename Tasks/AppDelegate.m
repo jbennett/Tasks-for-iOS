@@ -16,19 +16,14 @@ NSString *kChildren = @"children";
 
 @implementation AppDelegate
 
-- (void)dealloc
-{
-    [_window release];
-    [super dealloc];
-}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
-    self.tasksTableViewController = [[[TasksTableViewController alloc] initWithTasks:[self _generateTasks]] autorelease];
+    self.tasksTableViewController = [[TasksTableViewController alloc] initWithTasks:[self _generateTasks]];
     
-    self.navigationController = [[[UINavigationController alloc] initWithRootViewController:self.tasksTableViewController] autorelease];
+    self.navigationController = [[UINavigationController alloc] initWithRootViewController:self.tasksTableViewController];
     self.navigationController.toolbarHidden = NO;
     
     [self.window setRootViewController:self.navigationController];
@@ -92,7 +87,7 @@ NSString *kChildren = @"children";
         NSArray *childrenDescriptions = [taskDescription objectForKey:kChildren];
 
 
-        Task *task = [[[Task alloc] initWithTitle:title] autorelease];
+        Task *task = [[Task alloc] initWithTitle:title];
         task.childrenTasks = [NSMutableArray array];
         if (completed != task.completed) [task switchDone];
 

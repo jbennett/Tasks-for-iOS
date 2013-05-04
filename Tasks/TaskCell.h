@@ -11,7 +11,7 @@
 
 @interface TaskCell : UITableViewCell
 
-@property (nonatomic, retain) Task *task;
+@property (nonatomic, strong) Task *task;
 
 - (void)configureStyle;
 - (void)setActive;
