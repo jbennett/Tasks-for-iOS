@@ -111,7 +111,8 @@
 
 - (void)sort
 {
-    self.tasks = [self.tasks sortedArrayUsingSelector:@selector(title)];
+    NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES];
+    self.tasks = [self.tasks sortedArrayUsingDescriptors:@[sort]];
 
     // This would look much nicer with animations, wouldn't it? :)
     [self.tableView reloadData];
