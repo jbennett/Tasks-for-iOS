@@ -21,6 +21,9 @@
 		36D9E22A16DFC273002E74C2 /* Checkbox-Empty@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 36D9E22816DFC273002E74C2 /* Checkbox-Empty@2x.png */; };
 		36E85B9C16DE5F5000F6BA8F /* TasksTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36E85B9B16DE5F5000F6BA8F /* TasksTableViewController.m */; };
 		36E85BA016DE614E00F6BA8F /* TaskCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 36E85B9F16DE614E00F6BA8F /* TaskCell.m */; };
+		3B2192F61734C61B00929B54 /* UIImage+NamedImages.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2192F51734C61B00929B54 /* UIImage+NamedImages.m */; };
+		3B2192F91734E92F00929B54 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B2192F71734E92E00929B54 /* Icon.png */; };
+		3B2192FA1734E92F00929B54 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B2192F81734E92E00929B54 /* Icon@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +48,10 @@
 		36E85B9B16DE5F5000F6BA8F /* TasksTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TasksTableViewController.m; sourceTree = "<group>"; };
 		36E85B9E16DE614E00F6BA8F /* TaskCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskCell.h; sourceTree = "<group>"; };
 		36E85B9F16DE614E00F6BA8F /* TaskCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskCell.m; sourceTree = "<group>"; };
+		3B2192F41734C61B00929B54 /* UIImage+NamedImages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+NamedImages.h"; sourceTree = "<group>"; };
+		3B2192F51734C61B00929B54 /* UIImage+NamedImages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+NamedImages.m"; sourceTree = "<group>"; };
+		3B2192F71734E92E00929B54 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		3B2192F81734E92E00929B54 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +71,8 @@
 		36CF557F16DD7EAE0028A8D1 = {
 			isa = PBXGroup;
 			children = (
+				3B2192F71734E92E00929B54 /* Icon.png */,
+				3B2192F81734E92E00929B54 /* Icon@2x.png */,
 				363577F4172FB65A00A17CFC /* Welcome.txt */,
 				36CF559416DD7EAE0028A8D1 /* Tasks */,
 				36CF558D16DD7EAE0028A8D1 /* Frameworks */,
@@ -92,6 +101,7 @@
 		36CF559416DD7EAE0028A8D1 /* Tasks */ = {
 			isa = PBXGroup;
 			children = (
+				3B2192F31734C5FB00929B54 /* categories */,
 				36CF559D16DD7EAE0028A8D1 /* AppDelegate.h */,
 				36CF559E16DD7EAE0028A8D1 /* AppDelegate.m */,
 				36CF55AB16DD7EC70028A8D1 /* Task.h */,
@@ -120,12 +130,21 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		3B2192F31734C5FB00929B54 /* categories */ = {
+			isa = PBXGroup;
+			children = (
+				3B2192F41734C61B00929B54 /* UIImage+NamedImages.h */,
+				3B2192F51734C61B00929B54 /* UIImage+NamedImages.m */,
+			);
+			name = categories;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		36CF558916DD7EAE0028A8D1 /* Tasks */ = {
+		36CF558916DD7EAE0028A8D1 /* MyTasks */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 36CF55A816DD7EAE0028A8D1 /* Build configuration list for PBXNativeTarget "Tasks" */;
+			buildConfigurationList = 36CF55A816DD7EAE0028A8D1 /* Build configuration list for PBXNativeTarget "MyTasks" */;
 			buildPhases = (
 				36CF558616DD7EAE0028A8D1 /* Sources */,
 				36CF558716DD7EAE0028A8D1 /* Frameworks */,
@@ -135,7 +154,7 @@
 			);
 			dependencies = (
 			);
-			name = Tasks;
+			name = MyTasks;
 			productName = Tasks;
 			productReference = 36CF558A16DD7EAE0028A8D1 /* Tasks.app */;
 			productType = "com.apple.product-type.application";
@@ -161,7 +180,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				36CF558916DD7EAE0028A8D1 /* Tasks */,
+				36CF558916DD7EAE0028A8D1 /* MyTasks */,
 			);
 		};
 /* End PBXProject section */
@@ -177,6 +196,8 @@
 				36D9E22916DFC273002E74C2 /* Checkbox-Checked@2x.png in Resources */,
 				36D9E22A16DFC273002E74C2 /* Checkbox-Empty@2x.png in Resources */,
 				363577F5172FB65A00A17CFC /* Welcome.txt in Resources */,
+				3B2192F91734E92F00929B54 /* Icon.png in Resources */,
+				3B2192FA1734E92F00929B54 /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,6 +213,7 @@
 				36CF55AD16DD7EC70028A8D1 /* Task.m in Sources */,
 				36E85B9C16DE5F5000F6BA8F /* TasksTableViewController.m in Sources */,
 				36E85BA016DE614E00F6BA8F /* TaskCell.m in Sources */,
+				3B2192F61734C61B00929B54 /* UIImage+NamedImages.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,7 +304,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		36CF55A816DD7EAE0028A8D1 /* Build configuration list for PBXNativeTarget "Tasks" */ = {
+		36CF55A816DD7EAE0028A8D1 /* Build configuration list for PBXNativeTarget "MyTasks" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				36CF55A916DD7EAE0028A8D1 /* Debug */,
