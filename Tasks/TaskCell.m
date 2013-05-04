@@ -43,15 +43,6 @@
     [self checkboxImageView].image = [UIImage checkedImage];
 }
 
-- (UIView *)subviewForTag:(NSInteger)tag
-{
-    for (UIView *subview in self.subviews) {
-        if (subview.tag == tag) return subview;
-    }
-
-    return nil;
-}
-
 - (UIImageView *)checkboxImageView
 {
     return (UIImageView *)[self viewWithTag:CHECKMARKVIEW];
