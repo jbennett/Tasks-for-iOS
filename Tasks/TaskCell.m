@@ -10,6 +10,12 @@
 
 #define CHECKMARKVIEW 100
 
+@interface TaskCell ()
+
+- (UIImageView *)checkboxImageView;
+
+@end
+
 @implementation TaskCell
 
 - (void)configureStyle
@@ -29,6 +35,7 @@
 - (void)setInactive
 {
     self.textLabel.textColor = [UIColor lightGrayColor];
+    [self checkboxImageView].image = [UIImage checkedImage];
 }
 
 - (UIView *)subviewForTag:(NSInteger)tag
@@ -40,12 +47,17 @@
     return nil;
 }
 
+- (UIImageView *)checkboxImageView
+{
+    return (UIImageView *)[self viewWithTag:CHECKMARKVIEW];
+}
+
 - (void)layoutSubviews
 {
     [super layoutSubviews];
 
     // Configure Image View
-    UIImageView *imageView = (UIImageView *)[self viewWithTag:CHECKMARKVIEW];
+    UIImageView *imageView = [self checkboxImageView];
     if (imageView == nil) {
         imageView = [[[UIImageView alloc] initWithImage:[UIImage checkedImage]] autorelease];
         imageView.tag = CHECKMARKVIEW;
