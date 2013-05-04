@@ -28,7 +28,12 @@
 - (void)setTask:(Task *)task
 {
     _task = task;
-    self.textLabel.text = task.title;
+    if ([_task.childrenTasks count] == 0) {
+        self.textLabel.text = task.title;
+    } else {
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"completed = NO"];
+        self.textLabel.text = [NSString stringWithFormat:@"%@ - %d subtasks remaining", task.title, [[task.childrenTasks filteredArrayUsingPredicate:predicate] count]];
+    }
     
     if ([_task.childrenTasks count] > 0) {
         [self setAccessoryType:UITableViewCellAccessoryDetailDisclosureButton];
