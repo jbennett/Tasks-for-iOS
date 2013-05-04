@@ -133,7 +133,7 @@
     
     NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES];
     NSArray *oldTasks = [self.tasks copy];
-    self.tasks = [self.tasks sortedArrayUsingDescriptors:@[sort]];
+    self.tasks = [[self.tasks sortedArrayUsingDescriptors:@[sort]] mutableCopy];
     
     // animate change
     [self.tableView beginUpdates];
